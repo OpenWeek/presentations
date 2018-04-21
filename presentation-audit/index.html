@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/ow.css">
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .flex-container-top-down {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .reveal li small {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Open Week 2017</h1>
+            <p>du 2 au 6 juillet</p>
+        </section>
+        <section>
+            <h2>
+                Qu'est-ce que c'est?
+            </h2>
+            <ul>
+                <li class="fragment">Une semaine dédiée à l'Open Source</li>
+                <li class="fragment">4 Projets Open Source hyper chouettes</li>
+                <li class="fragment">Pour tous les niveaux!</li>
+                <li class="fragment">Un bon moyen d'étoffer son CV et de développer ses compétences</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                Syllabus interactif
+            </h2>
+            <div class="flex-container">
+                <div style="width: 100%; margin: auto">
+                    <ul>
+                        <li class="fragment">
+                            Implémenter de nouvelles fonctionalités (backend)
+                        </li>
+                        <li class="fragment">
+                            Création de contenu pour le syllabus python
+                        </li>
+                        <li class="fragment">
+                            Création de nouveaux exercices (Python et blockly)
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <h2>
+                Raspberry pi : une mini station météo
+            </h2>
+            <div class="flex-container">
+                <div style="height:100%">
+                    <ul>
+                        <li class="fragment"> 
+                            Utilisation de rpi
+                        </li>
+                        <li class="fragment">
+                            Mise en place d'un serveur HTTP
+                        </li>
+                        <li class="fragment">
+                            Visualisation des données (d3.js)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <h2>
+                Application android
+            </h2>
+            <div class="flex-container">
+                <ul>
+                    <li class="fragment">
+                        Dévellopement d'une app android pour un KAP
+                    </li>
+                    <li class="fragment">
+                        Jeux liant l'information et l'amusement
+                    </li>
+                    <li class="fragment">
+                        Nécessite assez d'intéressé
+                    </li>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>
+                Création d'un plugin
+            </h2>
+
+            <div class="fragment" style="text-align: left">
+                Les contributeurs participeraient à l'élaboration d'un plugin simple pour un projet déjà existant.
+            </div>
+            <div style="text-align: left">
+                <ul>
+                    <li class="fragment">exemple: plugin ICTV</li>
+                    <ul class="fragment">
+                        <li> Communique avec INGInious et récupère des statistiques</li>
+                        <li> Insertion dans une slide pour les ICTV </li>
+                        <li> La tâche la plus utilisée, la moins réussie, etc.</li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+                Joindre l'utile à l'agréable
+            </h2>
+            <div style="text-align: left">Cette année encore, de nombreuses activités de détente seront prévues</div>
+            <ul>
+                <li class="fragment">Repas communs</li>
+                <li class="fragment">Regarder un film ensemble</li>
+                <li class="fragment">Présentation d'une entreprise dont le business est centré sur un projet Open Source</li>
+                <li class="fragment">Visite d'un labo de l'UCL (surprise)</li>
+                <li class="fragment">Pendant la journée, des activités de détente sont aussi disponibles à tout moment pour qui le désire</li>
+            </ul>
+            <div class="fragment" style="text-align: left">Tout cela s'adapte selon vos envies, l'idée est aussi de passer un excellent moment tous ensemble</div>
+        </section>
+        <section>
+            <h2>
+                S'inscrire
+            </h2>
+            <ul>
+                <li>
+                    Remplir le formulaire en précisant que l'on s'inscrit et en indiquant son adresse e-mail
+                </li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>On espère vous voir nombreux !</h2>
+
+        </section>
+
+
+    </div>
+</div>
+<script src="js/reveal.js"></script>
+<script src="js/head.min.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1024,
+        height: 768,
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+</script>
+</body>
+</html>
