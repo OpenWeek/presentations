@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/ow.css">
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .flex-container-top-down {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .reveal li small {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Open Week 2018</h1>
+            <p>Introduction et présentation</p>
+        </section>
+
+        <section>
+            <h3> Objectifs de la semaine </h3>
+            <ul>
+                <li> Faire un pas dans l'univers de l'Open Source </li>
+                <li> S'impliquer dans un projet de long terme </li>
+                <li> Apprendre de nouveaux outils et technologies </li>
+                <li> Avoir un exemple d'application de vos études </li>
+                <li> Passer un bon moment </li>
+            </ul>
+        </section>
+
+        <!-- Garder slide mission/vision ? -->
+        
+        <section>
+            <h3> Déroulement de la semaine </h3>
+            <ul>
+                <li> Petit déjeuner le matin </li>
+                <li> Contribution au projets au matin et l'après midi </li>
+                <li> Présentations et/ou activité chaque jour </li>
+                <li> Repas chaud à midi (RestoU typiquement) </li>
+                <li> Activités de détentes quand vous le désirez </li>
+            </ul>
+
+            <p> Attention, les salles informatiques ont été refaites il y a peu, donc <b>ne mangez/buvez pas en salle</b> s'il vous plaît </p>
+        </section>
+
+        <section>
+            <h3> Les projets de cette année </h3>
+            <ul>
+                <li> Syllabus interactif : backend et contenu </li>
+                <li> Mini station météo sur raspberry pi </li>
+                <li> Créer des exercices blockly sur INGInious </li>
+                <li> Un jeu mobile pour le Kap Hot </li>
+                <li> Plugin ICTV/INGInious </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Syllabus interactif </h3>
+            <ul>
+                <li> Nouvelle fonctionalité (ex: double panel pour l'édition, système de traduction, etc.) </li>
+                <li> Exercice python avec un context très développé </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Mini station mété sur raspberry pi </h3>
+            <ul>
+                <li> Récupération de différents type de donnée via capteur </li>
+                <li> Traitement des données pour créer des graphiques </li>
+                <li> Affichage des résultats sur un serveur web </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Exercices blockly </h3>
+            <ul>
+                <li> Blockly est un language de programmation basé sur des bloc </li>
+                <li> Utile pour l'apprentissage de l'informatique chez les jeunes </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Jeu mobile pour le Kap Hot </h3>
+            <ul>
+                <li> TODO: Insérer info ici </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Plugin ICTV/INGInious </h3>
+            <ul>
+                <li> ICTV est le programme qui affiche les slides sur les écrans du département (entre autre) </li>
+                <li> Le plugin peut être uniquement sur ICTV </li>
+                <li> ou alors être lié avec d'autre programme comme INGInious </li>
+                <li> Exemple : afficher des stats rigolote d'INGInious (tâche la plus raté, la plus plus essayée, etc.)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Organisation pratique </h3>
+            <ul>
+                <li> Pour facilité l'organisation, vous serez séparer en groupe dans chaque projet </li>
+                <li> Au milieu de la semaine, vous aurez l'opportunité de changer de projet </li>
+            </ul>
+
+            <p>
+            Nous avons fait une répartition initiale en fonction de vos réponse au formulaire. Cette répartition n'est pas fixe,
+            si vous voulez changé, venez me voir après la présentation.
+            </p>
+        </section>
+
+        <section>
+            <h3> Avant de commencer à travailler </h3>
+            <p>
+            En fonction de la répartition, vous allez assister à une présentation plus détaillée du projet dans lequel vous êtes.
+            Après ces présentations, vous aurez une présentation Python pour ceux qui ne connaissent pas et qui en ont besoin
+            </p>
+        </section>
+    </div>
+</div>
+<script src="js/reveal.js"></script>
+<script src="js/head.min.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1024,
+        height: 768,
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+</script>
+</body>
+</html>
