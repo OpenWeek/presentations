@@ -1,0 +1,165 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>OpenWeek 2018 - Une introduction à Blockly</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/blood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/' + (window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css');
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section id="titre">
+            <h1>OpenWeek 2018</h1>
+            <h2>Une introduction à Blockly</h2>
+            <a href="https://openweek.github.io/presentation-python/index.html" target="_blank">https://openweek.github.io/presentations/presentation-blockly/index.html</a>
+            <br>
+            <br>
+            <small>Bastien Nothomb - <a href="mailto:bastien.nothomb@student.uclouvain.be" target="_blank">bastien.nothomb@student.uclouvain.be</a></small>
+        </section>
+        
+        <section id="objectif">
+            <h1>Objectif du projet</h1>
+            <ul>
+                <li class="fragment">Réaliser des exercices visuels</li>
+                <li class="fragment">Pour des enfants de secondaire</li>
+                <li class="fragment">Afin d'apprendre à programmer en s'amusant</li>
+            </ul>
+        </section>
+        
+	    <section id="intro-1">
+            <h1>Blockly</h1>
+            <ul>
+                <li class="fragment">Langage de programmation visuel</li>
+                <li class="fragment">Des blocs tout fait ou créés à l’aide de la <a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html" target="_blank">Blockly Developer Tools</a></li>
+                <li class="fragment">Développé par Google</li>
+                <li class="fragment">Intégré dans INGInious</li>
+            </ul>
+        </section>
+        
+        
+        <section id="intro-2">
+            <h1>Blockly</h1>
+            <img style='height: 75%; width: 75%;' class="fragment" src="blockly_task.png">
+        </section>
+        
+        <section id="task-1">
+            <h1>Une tâche Blockly</h1>
+            <h2>se compose de:</h2>
+            <ul>
+                <li class="fragment">un subproblem de type blockly</li>
+                <img style='height: 100%; width: 100%;' class="fragment" src="blockly_id.png">
+                <li class="fragment">une toolbox</li>
+                <li class="fragment">un workspace</li>
+                <li class="fragment">et plein d'autres choses</li>
+            </ul>
+        </section>     
+              
+        <section id="task-2">
+            <h1>La toolbox Blockly</h1>
+            <li>TODO: encadrer en rouge la toolbox </li>
+            <img style='height: 85%; width: 85%;' class="fragment" src="blockly_toolbox.png">
+        </section>
+        
+        <section id="task-3">
+            <h1>Le workspace Blockly</h1>
+            <li>TODO: encadrer en rouge le workspace</li>
+            <img style='height: 85%; width: 85%;' class="fragment" src="blockly_workspace.png">
+        </section>
+        
+        <section id="custom-1">
+            <h1>Les blocs customs</h1>
+            <ul>               
+                <li class="fragment">Tous les blocs utilisés dans l’exemple sont des blocs créés spécialement pour l’exercice.</li>
+                <li class="fragment">Il existe déjà beaucoup de blocs que vous pouvez utiliser dans blockly</li>
+            </ul>
+            <table class="fragment" style="width:100%">
+                <tr>
+                    <th>Personnalisés</th>
+                    <th>Blocs standards</th>
+                </tr>
+                <tr>
+                    <td><img style='height: 45%; width: 45%;' src="blockly_block_custom.png"></td>
+                    <td><img style='height: 55%; width: 55%;' src="blockly_block_standart.png"></td>
+                </tr>
+            </table> 
+        </section>
+        
+        <section id="custom-2">
+            <h1>Les blocs customs</h1>              
+            <li>Les <a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html" target="_blank">Blockly Developer Tools</a> fournissent un outil visuel pour créer des blocs</li>
+            <img style='height: 100%; width: 100%;' src="blockly_block_developertools.png"> 
+        </section>
+        
+        <section id="inginious-1">
+            <h1>L'architecture inginious</h1>           
+        </section>
+        
+        <section id="setup-1">
+            <h1>Installation</h1>           
+        </section>
+        
+        <section id="caneva-1">
+            <h1>Do et don't</h1>           
+        </section>     
+	    
+	    <section id="util-1">
+            <h1>Liens utiles</h1>
+            <ul>
+                <li><a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html" target="_blank">Blockly Developer Tools</a></li>
+                <li><a href="https://github.com/fthuin/INGInious_blockly_tasks" target="_blank">Répertoire d'exercices</a></li>
+                <li><a href="https://jobblockly.readthedocs.io/en/latest/BaseBlockly.html" target="_blank">Tuto création tâche</a></li>
+                <li><a href="https://developers.google.com/blockly/guides/overview" target="_blank">Documentation de google</a></li>
+                <li><a href="https://github.com/google/blockly-games" target="_blank">Blockly Games</a></li>
+            </ul>           
+        </section> 
+     
+     
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+<script>
+    var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/';
+    Reveal.initialize({
+        width: 1440,
+        height: 1080,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: cdn + 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.configure({
+                        languages: ['python', 'html', 'yaml']
+                    });
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+
+</body>
+</html>
