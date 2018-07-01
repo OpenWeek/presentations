@@ -155,7 +155,7 @@
         </section>
         <section id="ictv-doc">
             <h4 style="text-transform: inherit;">Une seule source d'information: la documentation officielle <a href="http://ictv.rtfd.io" target="_blank">http://ictv.rtfd.io</a></h4>
-            <iframe class="stretch" src="http://ictv.rtfd.io"></iframe>
+            <iframe class="stretch" src="https://ictv.readthedocs.io/en/latest/"></iframe>
         </section>
         <section id="plugin-schema">
             <h2>Execution</h2>
@@ -382,7 +382,7 @@
             <h2>get_content</h2>
             <pre style="width: 95%;"><code data-trim style="max-height: none;">
                 def get_content(channel_id):
-                    channel = Channel.get(channel_id)</code><code class="fragment" style="max-height: none;">
+                    channel = PluginChannel.get(channel_id)</code><code class="fragment" style="max-height: none;">
     logger_extra = {'channel_name': channel.name, 'channel_id': channel.id}
     logger = get_logger('img-grabber', channel)</code><code class="fragment" style="max-height: none;">
     url = channel.get_config_param('url')
