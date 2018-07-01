@@ -28,7 +28,7 @@
         <section id="titre">
             <h1>OpenWeek 2018</h1>
             <h2>Une introduction à Blockly</h2>
-            <a href="https://openweek.github.io/presentation-python/index.html" target="_blank">https://openweek.github.io/presentations/presentation-blockly/index.html</a>
+            <a href="https://openweek.github.io/presentations/presentation-blockly/index.html" target="_blank">https://openweek.github.io/presentations/presentation-blockly/index.html</a>
             <br>
             <br>
             <small>Bastien Nothomb - <a href="mailto:bastien.nothomb@student.uclouvain.be" target="_blank">bastien.nothomb@student.uclouvain.be</a></small>
@@ -38,12 +38,13 @@
             <h1>Objectif du projet</h1>
             <ul>
                 <li class="fragment">Réaliser des exercices visuels</li>
-                <li class="fragment">Pour des enfants de secondaire</li>
+                <li class="fragment">Pour de jeunes enfants</li>
                 <li class="fragment">Afin d'apprendre à programmer en s'amusant</li>
             </ul>
         </section>
         
-	    <section id="intro-1">
+        
+        <section id="intro-1">
             <h1>Blockly</h1>
             <ul>
                 <li class="fragment">Langage de programmation visuel</li>
@@ -56,15 +57,17 @@
         
         <section id="intro-2">
             <h1>Blockly</h1>
-            <img style='height: 75%; width: 75%;' class="fragment" src="blockly_task.png">
+            <img style='height: 75%; width: 75%;' src="blockly_task.png">
         </section>
+        
         
         <section id="task-1">
             <h1>Une tâche Blockly</h1>
             <h2>se compose de:</h2>
             <ul>
-                <li class="fragment">un subproblem de type blockly</li>
-                <img style='height: 100%; width: 100%;' class="fragment" src="blockly_id.png">
+                <li class="fragment">un subproblem de type blockly
+                    <img style='height: 100%; width: 100%;' src="blockly_id.png">
+                </li>                
                 <li class="fragment">une toolbox: les blocs dont disposent les étudiants</li>
                 <li class="fragment">un workspace: espace dans lequel organiser les blocs pour répondre à l’exercice (peut être pré-rempli)</li>
                 <li class="fragment">et plein d'autres choses</li>
@@ -73,15 +76,14 @@
               
         <section id="task-2">
             <h1>La toolbox Blockly</h1>
-            <li>TODO: encadrer en rouge la toolbox </li>
-            <img style='height: 85%; width: 85%;' class="fragment" src="blockly_toolbox.png">
+            <img style='height: 85%; width: 85%;' src="blockly_toolbox.png">
         </section>
         
         <section id="task-3">
             <h1>Le workspace Blockly</h1>
-            <li>TODO: encadrer en rouge le workspace</li>
-            <img style='height: 85%; width: 85%;' class="fragment" src="blockly_workspace.png">
+            <img style='height: 85%; width: 85%;' src="blockly_workspace.png">
         </section>
+        
         
         <section id="custom-1">
             <h1>Les blocs customs</h1>
@@ -107,9 +109,53 @@
             <img style='height: 100%; width: 100%;' src="blockly_block_developertools.png"> 
         </section>
         
-        <section id="inginious-1">
-            <h1>L'architecture inginious</h1>           
+        <section id="custom-3">
+            <h1>Les blocs customs</h1>
+            <table style="width:100%">
+                <tr>
+                    <td class="fragment">            
+                        <li>Ce code définit le bloc de manière visuelle</li>
+                        <img style='height: 70%; width: 70%;' src="blockly_block_custom_visual.png">
+                    </td>
+                    <td class="fragment">
+                        <li>Ce code définit le code qui sera généré par le bloc</li>
+                        <img style='height: 70%; width: 70%;' src="blockly_block_custom_code.png">
+                    </td>
+                </tr>
+            </table>
+            <li class="fragment">
+                Ces deux codes seront simplement à copier/coller dans le fichier public/blocks.js de la tâche INGInious
+                <img style='height: 70%; width: 70%;' src="blockly_block_custom_file.png">
+            </li> 
+            </ul>            
         </section>
+        
+        
+        <section id="inginious-1">
+            <h1>L'architecture inginious</h1>
+            <img style='height: 50%; width: 50%;' src="inginious_file.png">           
+        </section>
+        
+        <section id="inginious-2">
+            <h1>Le fichier run</h1>
+            <ul>
+                <li class="fragment">C’est le fichier qui exécute les tests sur le serveur d’INGInious</li>
+            </ul>           
+        </section>
+        
+        <section id="inginious-3">
+            <h1>Le fichier task.yaml</h1>
+            <ul>
+                <li class="fragment">
+                    Vous pouvez directement configurer la tâche sur votre instance d’INGInious qui tourne sur votre vm, pour récupérer un task.yaml bien formaté.
+                    <img style='height: 50%; width: 50%;' src="inginious_task.png">
+                </li>
+                <li class="fragment">
+                    Faites attention que le type soit bien blockly
+                </li>
+            </ul>           
+        </section>
+        
         
         <section id="setup-1">
             <h1>Installation de Blockly</h1>
@@ -152,6 +198,7 @@
                 <li class="fragment">Installer la VM</li>
                 <li class="fragment">Lancer et comprendre les tâches existantes</li>
                 <li class="fragment">Créer ses propres tâches (simple puis avec visuel)</li>
+                <li class="fragment">Les mettre sur <a href="https://github.com/OpenWeek/openweek-blockly" target="_blank">ce repo</a></li>
             </ul>           
         </section> 
      
