@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/ow.css">
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .flex-container-top-down {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .reveal li small {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Open Week 2018</h1>
+            <p>Syllabus Interactif</p>
+        </section>
+
+        <section>
+            <h3> Technologies utilisées </h3>
+            <ul>
+                <li> Python (Flask pour faire tourner la webapp) </li>
+                <li> SQLite pour la DB </li>
+                <li> Jinja2 pour le templating </li>
+                <li> Un peu de Javascript </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Structure de l'application </h3>
+            <img src="img/structure.png"/>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> Double-panel pour l'édition d'une page rST. Par exemple, <img src="img/double_panel.png"/> (source : http://rst.ninjs.org/# )<p>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> Intégration de Sphinx dans le syllabus. Sphinx permet de créer de la documentation facilement.
+            Pour plus d'information vous pouvez allez voir sur <a href="http://www.sphinx-doc.org/en/master/">ici</a></p>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> Mettre en place le système de traduction via <a href="https://docs.python.org/2/library/gettext.html">gettext</a>. Traduction
+            de la webapp mais aussi des pages (i.e., loading dynamique des pages en fonction de la locale) </p>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> Mettre un système de slide intégrer au syllabus pour que le prof puisse faire des exercices
+            directement dans le flot du cours théorique </p>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> Si vous avez des idées sympa, on peut toujours en discuter aussi ! </p>
+        </section>
+
+        <section>
+            <h3> Exercice Python </h3>
+            <p> Vous pouvez aussi créer des exercices pour le nouveau cours de Python qui 
+            va être lancé en septembre </p>
+        </section>
+
+        <section>
+            <h3> Exercice Python </h3>
+            <p> Structure d'un exercice 
+            <pre><code>
+            +Task
+            | task.yaml
+            | run (script python qui lance le tout)
+            | +/src
+            | | Corr$Task.py (version correct du code)
+            | | Test$Task.py (test et feedback)
+            | | +/Templates
+            | | | $task (template)
+            </code></pre>
+            </p>
+        </section>
+
+        <section>
+            <h3> Exercice Python </h3>
+            <p> Il y a déjà plein d'exemples <a href="https://github.com/tdba/CS1-Python">ici</a>, n'hésitez pas à aller
+            voir pour comprendre un peu le fonctionnement ! </p>
+        </section>
+
+        <section>
+            <h3> Exercice Python </h3>
+            <p> L'important ici est de faire des exercices avec un context intéressant. Le but n'est pas de faire un exercice 
+            difficile, mais de changer des habituels exercices mathématiques, list chainées, etc. </p>
+        </section>
+
+        <section>
+            <h2> Des questions ? </h2>
+        </section>
+    </div>
+</div>
+<script src="js/reveal.js"></script>
+<script src="js/head.min.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1024,
+        height: 768,
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+</script>
+</body>
+</html>
