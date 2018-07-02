@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>OpenWeek 2018 - Un App pour un KAP</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/blood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
+
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/' + (window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css');
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section id="titre">
+                <h1>OpenWeek 2018</h1>
+                <h2>Une app pour un KAP</h2>
+                <small>Tom Rousseaux - <a href="mailto:tom.rousseaux@student.uclouvain.be">tom.rousseaux@student.uclouvain.be</a></small>
+            </section>
+
+            <section id="gideros">
+                <h2>Les outils :</h2>
+                <ul>
+                    <li class="fragment">Gideros</li>
+                    <ul>
+                        <li class="fragment">Framework open source</li>
+                        <li class="fragment">Cross-plateform</li>
+                        <li class="fragment">Spécialisé pour les jeux</li>
+                        <li class="fragment">S'utilise en Lua</li>
+                    </ul>
+                    <li class="fragment">Votre cerveau</li>
+                </ul>
+            </section>
+
+            <section id="gideros_install">
+                <h2>Pour l'installer :</h2>
+                <ul>
+                    <li class="fragment">Windows & MacOS :</li>
+                    <ul>
+                        <li class="fragment"><a href="http://giderosmobile.com/download">http://giderosmobile.com/download</a></li>
+                        <li class="fragment">Défilez vers le bas</li>
+                        <li class="fragment">Téléchargez la dernière version</li>
+                    </ul>
+                    <li class="fragment">Linux :</li>
+                    <ul>
+                        <li class="fragment">Si vous êtes courageux (et chanceux ^^), à partir des sources :</li>
+                        <ul>
+                            <li class="fragment"><a href="https://www.dropbox.com/s/22arh2pxgif3d60/buildGiderosLinux.txt?dl=0">Débrouillez-vous avec ça</a></li>
+                            <li class="fragment">La procédure ne fonctionne ni sur mon Fedora 28, ni sur ma VM Ubuntu 18.04</li>
+                        </ul>
+                        <li class="fragment">Avec Wine :</li>
+                        <ul>
+                            <li class="fragment">Installez Wine avec votre manager de packet</li>
+                            <li class="fragment">Si besoin, je peux vous fournir une VM Ubuntu 18.04 avec Wine</li>
+                        </ul>
+                    </section>
+
+                    <section id="repo">
+                        <h2>La base du projet :</h2>
+                        <ul>
+                            <li class="fragment">Clonez le repo : `git clone git@github.com:OpenWeek/app-for-a-KAP.git`</li>
+                            <li class="fragment">Parcourez vite fait le repo, l'architecture actuelle est assez triviale</li>
+                            <li class="fragment">Vous trouverez dedans le cahier des charges du kap hot</li>
+                        </ul>
+                    </section>
+
+                    <section id="gideros_hiw">
+                        <h2>Comment fonctionne le framework :</h2>
+                        <ul>
+                            <li class="fragment">Système de parent-enfant</li>
+                            <li class="fragment"><pre><code>
+A:addChild(B)
+A:addChild(C)
+B:addChild(D)
+B:addChild(E)
+C:addChild(F)
+                            </code></pre></li>
+                            <li class="fragment"><img src="sprite_hierarchy.png"></li>
+                        </ul>
+                    </section>
+
+                    <section id="lua">
+                        <h2>Le lua :</h2>
+                        <ul>
+                            <li class="fragment">Object:method(arguments)</li>
+                            <li class="fragment"><pre><code>
+ClassDefEx = {}
+
+function ClassDefEx:new()
+  newObj = {attr = 'example'}
+  self.__index = self
+  return setmetatable(newObj, self)
+end
+
+function ClassDefEx:toString()
+  print('I am an object')
+end
+                            </code></pre></li>
+                            <li class="fragment"><a href="http://tylerneylon.com/a/learn-lua/">Apprenez le lua en 15 minutes</a></li>
+                            <li class="fragment">Regardons le code du prototype ensemble</li>
+                        </ul>
+                    </section>
+
+                    <section id="questions">
+                        <h1>Vous avez des questions ?</h1>
+                        <h2>Posez-les !</h2>
+                        <h3>Vraiment</h3>
+                        S'il vous plait
+                </div>
+            </div>
+        </body>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+        <script>
+        var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/';
+        Reveal.initialize({
+            width: 1440,
+            height: 1080,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+            transition: 'slide',
+            dependencies: [
+                {
+                    src: cdn + 'plugin/highlight/highlight.js', async: true, callback: function () {
+                        hljs.configure({
+                            languages: ['python', 'html', 'yaml']
+                        });
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+        </script>
+
+        </html>
