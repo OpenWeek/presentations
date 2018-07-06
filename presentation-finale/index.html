@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/ow.css">
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .flex-container-top-down {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .reveal li small {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Open Week 2018</h1>
+            <p>L'Open Week, c'est (presque) fini</p>
+            <img style=' width: 20%; margin-right: 40px'  src="img/mfcry.png">
+        </section>
+
+        <section>
+            <h3> Résumé général </h3>
+            <ul>
+                <li class="fragment" > 27 participants de génie </li>
+                <li class="fragment" > Un staff du feu de Dieu </li>
+                <li class="fragment" > De l'entraide </li>
+                <li class="fragment" > De l'amour </li>
+                <li class="fragment" > Des brookies </li>
+                <li class="fragment" > Des pizzas </li>
+                <li class="fragment" > Des glaces </li>
+                <li class="fragment" > Une foule de viennoiseries </li>
+                <li class="fragment" > Moulte parties de fléchettes et de ping pong </li>
+                <li class="fragment" > Et toujours plus d'amour </li>
+
+            </ul>
+        </section>
+
+        <!-- Garder slide mission/vision ? -->
+
+        <section>
+            <h3> Ce qui nous a manqué</h3>
+            <img class="fragment" style=' width: 40%; margin-right: 40px'  src="img/mcf.jpg">
+            <img class="fragment" style=' width: 50%; margin-right: 40px'  src="img/tshirts.png">
+
+
+
+        </section>
+        <section>
+            <h2> MERCI!</h2>
+            <ul>
+                <li> Pour votre bonne humeur </li>
+                <li> Pour votre travail acharné </li>
+                <li> Pour le talent de ceux qui arrivent à atteindre leur cible aux fléchettes</li>
+                <li> Pour tout le reste </li>
+            </ul>
+            <p class="fragment" >Bref, MERCI! d'avoir contribué à rendre cette nouvelle édition de l'Open Week fantasmagorique!</p>
+            <div class="fragment" >
+               <span >Vous avez été </span>
+               <img style="width:15%; vertical-align:middle" src="img/pacha.gif">
+
+            </div>
+        </section>
+
+    </div>
+</div>
+<script src="js/reveal.js"></script>
+<script src="js/head.min.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1024,
+        height: 768,
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+</script>
+</body>
+</html>
