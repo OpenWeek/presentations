@@ -1,0 +1,187 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>OpenWeek 2019 - Syllabus Interactif + tâches INGInious</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/blood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/' + (window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css');
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section id="titre">
+            <h1>OpenWeek 2019</h1>
+            <h2>Syllabus Interactif</h2>
+            <h2>Tâches INGInious</h2>
+			<small>
+            <a href="https://openweek.github.io/presentations/presentation-syllabus_taches/index.html" target="_blank">https://openweek.github.io/presentations/presentation-syllabus_taches/index.html</a>
+			</small>
+            <br>
+            <br>
+            <small>Bastien Nothomb - <a href="mailto:bastien.nothomb@student.uclouvain.be" target="_blank">bastien.nothomb@student.uclouvain.be</a></small>
+            <small>Alexandre Dubray - <a href="mailto:alexandre.dubray@student.uclouvain.be" target="_blank">alexandre.dubray@student.uclouvain.be</a></small>
+        </section>
+
+        <section id="objectif">
+            <h3>Objectif du projet</h3>
+            <ul>
+                <li class="fragment">Ajouter des fonctionnalités au syllabus en ligne</li>
+                <li class="fragment">Créer du contenu via des exercices INGInious</li>
+            </ul>
+        </section>
+
+
+        <section id="syllabus">
+            <h3>Syllabus - description </h3>
+            <ul>
+                <li> Application web </li>
+                <li> Developpée au sein du département  </li>
+                <li> Utilisée pour donner le cours de Python en première bac </li>
+            </ul>
+        </section>
+
+ 		<section>
+            <h3>Syllabus - technologie </h3>
+            <ul>
+                <li> Python (Flask pour faire tourner la webapp) </li>
+                <li> SQLite pour la DB </li>
+                <li> Jinja2 pour le templating </li>
+                <li> Un peu de Javascript </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Structure de l'application </h3>
+            <img src="structure.png"/>
+        </section>
+
+        <section>
+            <h3>Quelques idées d'ajout en backend</h3>
+            <p> TO DO<p>
+        </section>
+
+
+
+		<section id="inginious">
+            <h3>Tâches INGInious</h3>
+			<ul>
+                <li> exercices INGInious pour un cours donné aux ingénieurs de gestion</li>
+                <li> <a href="https://trello.com/invite/b/ws8u0G9N/9f13664a0acfb2afb61eee45b6dd67e2/openweek-2019-t%C3%A2che-inginious">La liste des tâches proposées</a> </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Tâches INGInious - architecture</h3>
+            <pre><code>
+            +Task
+            | task.yaml
+            | run (script python qui lance le tout)
+            | +/src
+            | | Corr$Task.py (version correcte du code)
+            | | Test$Task.py (test et feedback)
+            | | +/Templates
+            | | | $task (template)
+            </code></pre>
+        </section>
+
+
+        <section id="setup">
+            <h3>Installation</h3>
+            <ul>
+                <li class="fragment">Le plus simple est d’utiliser la VM, elle est disponible avec des instructions d’installation sur <a href="https://github.com/OpenWeek/vagrant-ow2017" target="_blank">ce repo</a></li>
+                <li class="fragment">Sinon, vous pouvez installer si vous le désirez:
+        	        <ul>
+                        <li><a href="https://github.com/UCL-INGI/INGInious" target="_blank">INGInious</a></li>
+                        <li><a href="https://github.com/OpenWeek/interactive-syllabus" target="_blank">le syllabus</a></li>
+                        <li><a href="https://github.com/UCL-INGI/INGInious-demo-tasks" target="_blank">le tutoriel des tâches</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="caneva">
+            <h3>Do et don't</h3>
+            <ul>
+                <li class="fragment">Le projet est Open Source, donc spécifiez bien toutes vos méthodes pour que les futurs contributeurs puissent comprendre ce que vous faites</li>
+                <li class="fragment">Récupérez toutes les exceptions et transmettez les messages dans un langage compréhensible par les élèves (ex:ArithmeticException)
+   </li>
+            </ul>
+        </section>
+
+	    <section id="util">
+            <h3>Liens utiles</h3>
+            <ul>
+                <li><a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target="_blank">Tuto flask</a></li>
+                <li><a href="https://github.com/tdba/CS1-Python" target="_blank">Répertoire d'exercices python</a></li>
+            </ul>
+        </section>
+
+        <section id="recap">
+            <h3>Récapitulatif - Syllabus</h3>
+            <ul>
+                <li class="fragment">Installer le syllabus</li>
+                <li class="fragment">Lancer et comprendre le syllabus</li>
+                <li class="fragment">Choisir une amélioration</li>
+                <li class="fragment">Faire une pull request</a></li>
+            </ul>
+        </section>
+
+		<section id="recap">
+            <h3>Récapitulatif - INGInious</h3>
+            <ul>
+                <li class="fragment">Installer la VM/INGInious</li>
+                <li class="fragment">Lancer et comprendre les tâches existantes</li>
+                <li class="fragment">Créer ses propres tâches (simples puis compliquées)</li>
+                <li class="fragment">Les mettre sur <a href="???" target="_blank"> TODO</a></li>
+            </ul>
+        </section>
+
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+<script>
+    var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/';
+    Reveal.initialize({
+        width: 1440,
+        height: 1080,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: cdn + 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.configure({
+                        languages: ['python', 'html', 'yaml']
+                    });
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+
+</body>
+</html>
