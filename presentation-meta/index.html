@@ -1,0 +1,166 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>OpenWeek 2019 - Projet Meta</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/blood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/' + (window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css');
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section id="titre">
+            <h1>OpenWeek 2019</h1>
+            <h2>Projet Meta</h2>
+            <a href="https://openweek.github.io/presentations/presentation-meta/index.html" target="_blank">https://openweek.github.io/presentations/presentation-meta/index.html</a>
+            <br>
+            <br>
+            <small>Alexandre Fiset - <a href="mailto:alexandre.fiset@student.uclouvain.be" target="_blank">alexandre.fiset@student.uclouvain.be</a></small>
+            <small>Alexandre Dubray - <a href="mailto:alexandre.dubray@student.uclouvain.be" target="_blank">alexandre.dubray@student.uclouvain.be</a></small>
+        </section>
+        <section id="Intro">
+            <h2>Syllabus</h2>
+            <ul>
+                <li>Construire un "Readthedocs" pour l'installation ainsi que les règles/aides pour la contribution</li>
+                <li>Mise en place d'un Travis</li>
+            </ul>
+            <h2>Data-logger</h2>
+            <ul>
+                <li>Construire un "Readthedocs" pour faciliter l'utilisation de l'API</li>
+                <li>+ les même points que pour le syllabus</li>
+            </ul>
+        </section>
+        <section id="readthedoc">
+          <h2>Readthedocs</h2>
+          <ul>
+            <li> Il utilise sphinx : <code style="color: darkorange;">pip install sphinx</code></li>
+            <li class="fragment">Tout se passe dans un dossier à la racine <code style="color: limegreen;">"docs/"</code></li>
+            <li class="fragment">La doc s'écrie en utilisant des <code style="color: limegreen;">"*.rst"</code></li>
+            <li class="fragment">La page html se crée avec  <code style="color: darkorange;">"make html"</code> et se place dans <code style="color: limegreen;">"_build/html"</code></li>
+            <li class="fragment"><a href="https://socrates.io" target="_blank"> socrates.io </a> permet d'avoir une compilateur automatique en ligne de reStructuredText ( /!\ pas de thème)</li>
+          </ul>
+        </section>
+        <section id="Syllabus-readthedoc">
+            <h2>Syllabus - Readthedocs</h2>
+            <ul>
+              <li> Il y a déja une doc pour l'installation présente sur le <a href="https://github.com/OpenWeek/interactive-syllabus/blob/master/README.md" target="_blank"> projet </a></li>
+              <li class="fragment">Ajout d'un "how to contribute" (<a href="https://docs.readthedocs.io/en/stable/contribute.html#developer-documentation" target="_blank"> exemple </a>)</li>
+              <div style="text-align: center">
+                <img class="fragment" src="How_to_contribute.png" width="500"/>
+              </div>
+              <li class="fragment">Pour savoir quelle est la structure general du syllabus et comment y contribuer, voir les <a href="https://github.com/OpenWeek/presentations/tree/master/presentation-syllabus_taches" target="_blank"> slides du projet sylla </a></li>
+            </ul>
+        </section>
+        <section id="Data-logger-readthedoc">
+            <h2>Data-logger - Readthedocs</h2>
+            <ul>
+              <li>Ajout de la doc pour l'API (<a href="https://docs.readthedocs.io/en/stable/api/v2.html" target="_blank"> exemple </a>)</li>
+              <div style="text-align: center">
+                <img src="API.png" align="center"/>
+              </div>
+            </ul>
+        </section>
+        <section id="Travis">
+            <h2>Travis</h2>
+            <ul>
+              <li>Le but de Travis est de faire tourner le programme dans une VM à l'aide d'un <code style="color: limegreen;">".travis.yml"</code></li>
+              <li class="fragment">Il faut lui dire quelles languages sont utilisés</li>
+              <li class="fragment">Importer les dépendences </li>
+              <li class="fragment">Importer les autres repos git </li>
+              <li class="fragment">Lancer la suite de test</li>
+              <div style="text-align: center">
+                <img class="fragment" src="travis.png" width="500"/>
+              </div>
+              <li class="fragment"><a href="https://github.com/bnothomb/INGI2255-2018-Superform-QH" target="_blank"> un repo</a> qui utilise des tests python (fait par Nicolas et Bastien)</li>
+            </ul>
+        </section>
+        <section id="Concret">
+            <h2>En concret </h2>
+            <ul>
+              <li>Fork les projets pour avoir les droits administrateur</li>
+              <ul>
+                <li><a href="https://github.com/AlexandreFiset001/vagrant-ow/" target="_blank">1</a> et <a href="https://github.com/AlexandreFiset001/interactive-syllabus" target="_blank">2</a> pour ceux qui font Travis et doc pour le sylla</li>
+                <li><a href="https://github.com/AlexandreFiset001/vagrant-rpi/" target="_blank">1</a> et <a href="https://github.com/AlexandreFiset001/data-logger" target="_blank">2</a> pour ceux qui font Travis et doc pour le data-logger</li>
+              </ul>
+              <li class="fragment">Permettre à Travis ou Readthedoc d'avoir accès à ces repos</li>
+              <li class="fragment">Cloner seulement les VMs sur votre machine</li>
+              <li class="fragment">Changer les sources de pull et push pour git dans la VM</li>
+            </ul>
+        </section>
+        <section id="Concret-2">
+            <h2>En concret - doc sylla </h2>
+            <ul>
+              <li>Une fois la VM installer vous pouvez vous connecter en ssh avec  <code style="color: darkorange;">vagrant ssh</code></li>
+              <li class="fragment">Le dossier se trouve dans <code style="color: limegreen;">"/vagrant/syllabus/interactive-syllabus"</code> </li>
+              <li class="fragment">Vous avez un mount du dossier en local utiliser votre editeur de text et navigateur</li>
+              <li class="fragment">Attaquer la doc avec : comment crée des pages/exos, comment contribuer a la doc, comment installer la VM / crée son sylla, ...</li>
+            </ul>
+        </section>
+        <section id="Concret-3">
+            <h2>En concret - doc data-logger </h2>
+            <ul>
+              <li>Une fois la VM installer vous pouvez vous connecter en ssh avec  <code style="color: darkorange;">vagrant ssh</code></li>
+              <li class="fragment">Vous pouvez monter un dossier comme expliquer dans le README</li>
+              <li class="fragment">Le dossier se trouve dans <code style="color: limegreen;">"/var/www/data-logger"</code> </li>
+              <li class="fragment">Vous pouvez utiliser le mount du dossier en local à la souche du repo pour utiliser votre editeur de text et navigateur</li>
+              <li class="fragment">Attaquer la doc avec : une API, comment contribuer au projet/à la doc, installer la VM, ... </li>
+            </ul>
+        </section>
+        <section id="Concret-4">
+            <h2>En concret - Travis </h2>
+            <ul>
+              <li>Pour le sylla c'est mieux de partir du repo de la VM</li>
+              <li>Pour le data-logger ce n'est pas obligé</li>
+              <li class="fragment">Si vous ne partez pas de la VM alors il faudra la reconstruire dans le <code style="color: limegreen;">".travis.yml"</code>(ça peut être interressant)</li>
+              <li class="fragment">Pour le sylla : des tests automatique pour les exos, tester si le format est conforme à la doc, ...</li>
+              <li class="fragment">Pour data-logger : test de l'API,...(il va falloir attendre un petit peu que le projet se mette en route)</li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+<script>
+    var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/';
+    Reveal.initialize({
+        width: 1440,
+        height: 1080,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: cdn + 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.configure({
+                        languages: ['python', 'html', 'yaml']
+                    });
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>OpenWeek 2019 - Projet Data Logger</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/blood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
+    
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/' + (window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css');
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="titre">
+          <h1>OpenWeek 2019</h1>
+          <h2>Projet Data Logger</h2>
+          <small>Nicolas Rybowski - <a href="mailto:nicolas.rybowski@student.uclouvain.be">nicolas.rybowski@student.uclouvain.be</a></small>
+        </section>
+
+        <section id="general">
+          <h2><a href="https://github.com/OpenWeek/data-logger/blob/master/README.md#data-logger" target="_blank">Le projet</a></h2>
+        </section>
+
+        <section id="todo">
+          <h2>En pratique</h2>
+          <h4 class="fragment">3 parties</h4>
+          <ul>
+            <li class="fragment">WebApp
+              <ul>
+                <li class="fragment">Front-End</li>
+                <li class="fragment">Back-End</b></li>
+              </ul>
+            </li>
+            <li class="fragment">Services assurant la récolte des données
+              <ul>
+                <li class="fragment"><b>Hostapd</b> : Acces Point</li>
+                <li class="fragment"><b>Dnsmasq</b> : DNS + DHCP</li>
+                <li class="fragment"><b>Mosquitto</b> : Broker MQTT</li>
+                <li class="fragment">(Serveur SFTP)</li>
+              </ul>
+            </li>
+            <li class="fragment">Services assurant le bon fonctionnement des Clients
+              <ul>
+                <li class="fragment">Génération du <b>firmware</b> : Container <b>LXC</b></li>
+                <li class="fragment">Génération du code client</li>
+                <li class="fragment">Flash des clients</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section id="choice_time">
+          <h2>Qui veut faire quoi ?</h2>
+          <h6 class="fragment">Pour savoir qui doit se taper les explications techniques</h6>
+          <h7 class="fragment">En vrai, vous pouvez rester si vous voulez</h7>
+        </section>
+
+        <section id="tech">
+          <h2>Explications techniques</h2>
+          <h3>Partie WebApp</3>
+        </section>
+        
+        <section id="webapp">
+          <h2>Une webapp est ...</h2>
+          <ul>
+            <li class="fragment">Un programme</li>
+            <li class="fragment">de type client-serveur</li>
+            <li class="fragment">dont le client tourne dans un naviguateur web</li>
+            <li class="fragment">Ce dernier est composé de pages web</li>
+          </ul>
+        </section>
+        
+        <section id="types1">
+          <h2>Types de pages web</h2>
+          <ul>
+            <li class="fragment">Pages statiques</li>
+            <ul>
+              <li class="fragment">Page web dont le contenu ne varie pas en fonction de la requête</li>
+              <li class="fragment">Un fichier sur un serveur</li>
+              <li class="fragment">Typiquement :
+                <ul>
+                  <li>Documentation</li>
+                  <li>API</li>
+                  <li>Articles (blogs,etc)</li>
+                </ul>
+              </li>
+              <li class="fragment">Langages :
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+        </section>
+        
+        <section id="types2">
+          <h2>Types de pages web</h2>
+          <ul>
+            <li class="fragment">Pages dynamiques</li>
+            <ul>
+              <li class="fragment">Page web dont le contenu est généré lors de la requête</li>
+              <li class="fragment">Template dont certains champs sont complétés par un script</li>
+              <li class="fragment">Typiquement :
+                <ul>
+                  <li>Google Form</li>
+                  <li>...</li>
+                </ul>
+              </li>
+              <li class="fragment">Langages :
+                <ul>
+                  <li>PHP</li>
+                  <li>Python</li>
+                  <li>...</li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+        </section>
+        
+        <section id="servir">
+          <h2>Servir des pages web ?</h2>
+          <ul>
+            <li class="fragment">Protocole HTTP</li>
+            <li class="fragment">En pratique : serveur HTTP
+              <ul>
+                <li>Apache</li>
+                <li>Nginx</li>
+                <li>Cherokee</li>
+                <li>Unicorn</li>
+                <li>Lighttpd</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section id="setup">
+          <h2>Notre setup</h2>
+          <ul>
+            <li class="fragment">Serveur HTTP statique : <b>Lighttpd</b> (a.k.a. <b>Lighty</b>)</li>
+            <li class="fragment">Backend : framework <b>flask</b> (scripting en Python)</li>
+            <li class="fragment">Middleware : serveur FastCGI <b>flup</b></li>
+            <li class="fragment">Template engine : <b>Jinja2</b></li>
+          </ul>
+        </section>
+
+        <section id="setup2">
+          <h2>Notre setup (en image)</h2>
+          <div style="position:absolute;left:0px;top:0px;font-size: 32px">
+            <iframe src="OW2018_setup.svg" width="1400" height="1200"></iframe> 
+          </div>
+        </section>
+
+        <section id="structure">
+          <h2>Structure du projet</h2>
+          Cfr. <a href="https://github.com/OpenWeek/data-logger/" target="_blank">le repo</a>
+        </section>
+
+        <section id="webpy">
+          <h2>Flask</h2>
+          <h4 class="fragment">ou "comment coder une webapp en 5 lignes"</h4>
+          <pre class="fragment"><code>
+          from flask import Flask
+          app = Flask(__name__)
+
+          @app.route('/')
+          def hello_world():
+            return 'Hello, World!'
+          </code></pre>
+          <ul>
+            <li class="fragment">Contenu de <b>__init__.py</b></li>
+            <li class="fragment"><a href="http://flask.pocoo.org/docs/1.0/" target="_blank">Documentation officielle</a></li>
+          </ul>
+        </section>
+        
+        <section id="jinja">
+          <h2>Jinja2</h2>
+          <div class="fragment">
+           
+            <pre><code>
+              &lthtml&gt
+                &lthead&gt
+                  &lttitle&gt{{title}}&lt/title&gt
+                &lt/head&gt
+                &ltbody&gt
+                  {% block body %}{% endblock %}
+                &lt/body&gt
+              &lt/html&gt
+            </code></pre>
+            <h4>layout.html</h4>
+            
+            <pre><code>
+              {% extends "layout.html" %}
+              {% block body %}
+                <h2>Hello {{user_name}}</h2>
+              {% endblock %}
+            </code></pre>
+            <h4>template.html</h4>
+            
+            <pre><code>
+              class example:
+                def GET(self):
+                  context = {
+                    "title" : "Example page",
+                    "user_name" : "Billjoy"
+                  }
+                  return render_template("template.html", **context)
+            </code></pre> 
+            <h4>app.py</h4>
+            
+          </div>
+        </section>
+       
+        <section id="the_end">
+          <h2>A vous de jouer !</h2>
+          <h4 class="fragment">Des questions ?</h4>
+        </section>
+        
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+  <script>
+    var cdn = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/';
+    Reveal.initialize({
+      width: 1440,
+      height: 1080,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      slideNumber: true,
+      transition: 'slide',
+      dependencies: [
+        {
+          src: cdn + 'plugin/highlight/highlight.js', async: true, callback: function () {
+            hljs.configure({
+              languages: ['python', 'html', 'yaml']
+            });
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+
+</html>
