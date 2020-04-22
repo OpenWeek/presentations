@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/ow.css">
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .flex-container-top-down {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-around;
+        }
+
+        .reveal li small {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>OpenWeek 2020</h1>
+            <p>Date à préciser ... (début juillet normalement)</p>
+        </section>
+        <section>
+            <h2>
+                Qu'est-ce que c'est?
+            </h2>
+            <ul>
+                <li class="fragment">Une semaine dédiée à l'Open Source</li>
+                <li class="fragment">Des projets Open Source hyper chouettes</li>
+                <li class="fragment">Pour tous les niveaux!</li>
+                <li class="fragment">Un bon moyen d'étoffer son CV et de développer ses compétences</li>
+                <li class="fragment">Du fun</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                Les projets
+            </h2>
+            <div class="flex-container">
+                <div style="width: 100%; margin: auto">
+                    <ul>
+                        <li class="fragment">Bot du Discord SINFO</li>
+                        <li class="fragment">Optimisation de la récolte des bulles à verre avec NRB</li>
+                        <li class="fragment">App du KapHot</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>
+                Joindre l'utile à l'agréable
+            </h2>
+            <div style="text-align: left">Cette année encore, de nombreuses activités de détente seront prévues. Par exemple:</div>
+            <ul>
+                <li class="fragment">Repas communs</li>
+                <li class="fragment">Jouer à des jeux de société</li>
+                <li class="fragment">Présentation d'une entreprise dont le business est centré sur un projet Open Source</li>
+                <li class="fragment">Pendant la journée, des activités de détente sont aussi disponibles à tout moment pour qui le désire</li>
+                <li class="fragment">D'autres activités surprises ...</li>
+            </ul>
+            <div class="fragment" style="text-align: left">Tout cela s'adapte selon vos envies, l'idée est aussi de passer un excellent moment tous ensemble</div>
+        </section>
+        <section>
+            <h2>
+                S'inscrire
+            </h2>
+            <p>Un formulaire sera envoyé par mail dès que la situation se sera clarifiée</p>
+        </section>
+
+        <section>
+            <h2>On espère vous voir nombreux !</h2>
+
+            <p> Informations sur <a href="http://openweek.info.ucl.ac.be/">http://openweek.info.ucl.ac.be/</a></p>
+            <p> Contact <a href = "mailto:staffopenweek@listes.uclouvain.be">staffopenweek@listes.uclouvain.be</a></p>
+
+        </section>
+
+
+    </div>
+</div>
+<script src="js/reveal.js"></script>
+<script src="js/head.min.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1024,
+        height: 768,
+        dependencies: [{
+            src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+</script>
+</body>
+</html>
