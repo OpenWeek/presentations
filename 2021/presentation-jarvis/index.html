@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>OpenWeek 2021 - Jarvis</title>
+
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js-master/dist/theme/blood.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="titre">
+					<h1>OpenWeek 2021</h1>
+					<h2>Jarvis</h2>
+					<small>
+						<a href="https://openweek.github.io/presentations/2021/presentation-jarvis/index.html" target="_blank">https://openweek.github.io/presentations/2021/presentation-jarvis/index.html</a>
+					</small>
+					<br>
+					<br>
+					<small>Bastien Nothomb</small>
+					<br>
+					<small>Aurélien Buchet</small>
+				</section>
+
+				<section id="jarvis">
+					<h3>Jarvis - description </h3>
+					<ul>
+						<li><em>A Personal Assistant for Linux, MacOS and Windows</em></li>
+						<li class="fragment">
+							<p>Usage principal en ligne de commande</p>
+							<img src="images/0_jarvis_cli.png" width="50%" />
+						</li>
+						<li class="fragment">
+							<p>Fonctionnalités étendues par des pluggins</p>
+							<ul>
+								<li>Pluggin pour ajouter des commandes</li>
+								<li>Pluggin pour que Jarvis parle</li>
+								<li>Pluggin pour parler à Jarvis</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<aside class="notes">
+						- Pas de DB : sauvegardé dans des fichier
+						- Pas de GUI
+					</aside>
+					<h3>Technologie </h3>
+					<ul>
+						<li> Python3 </li>
+						<li class="fragment"> ... Et c'est tout :) </li>
+					</ul>
+				</section>
+
+				<section>
+					<aside class="notes">
+						- data : endroit où sont sauvegardées les données
+						- CmdInterpreter : contient JarvisAPI, Jarvis interface for plugins.
+					</aside>
+					<h3> Structure de l'application </h3>
+					<pre><code class="language-plaintext">
+	| Jarvis
+		| doc
+		| installer
+		| jarviscli
+					</code></pre>
+				</section>
+				<section>
+					<aside class="notes">
+						- data : endroit où sont sauvegardées les documents
+						- packages/ memory : endroit où sont sauvegardées les données utilisateur
+						- CmdInterpreter : contient JarvisAPI, Jarvis interface for plugins.
+					</aside>
+					<h3> Structure de l'application </h3>
+					<pre><code class="language-plaintext" data-line-numbers="1-15|6|7-8|9-11|12-13|14|15">
+	| Jarvis
+		| doc
+		| installer
+		| jarviscli
+			| data
+			| packages
+				| memory
+			| plugins
+				- voice.py
+				- voice_control.py
+			| packages
+				| memory
+			- __main__.py
+			- CmdInterpreter.py
+					</code></pre>
+				</section>
+
+				<section id="objectif">
+					<h3>Objectif du projet</h3>
+					<ul>
+						<li class="fragment">Contribuer à un projet opensource hors UCLouvain
+							<ul>
+								<li class="fragment">Interargir avec la communauté</li>
+								<li class="fragment">Faire merger sa pull request</li>
+							</ul>
+						</li>
+						<li class="fragment">S'amuser ;)</li>
+					</ul>
+				</section>
+
+				<section id="recap">
+					<h3>Programme de la semaine</h3>
+					<ul>
+						<li class="fragment">Installer Jarvis</li>
+						<li class="fragment">Lancer et comprendre les possibilités</li>
+						<li class="fragment">Choisir une amélioration
+							<ul>
+								<li>Améliorer le coeur du programme</li>
+								<li>Améliorer un pluggin</li>
+								<li>Faire un pluggin</li>
+							</ul>
+						</li>
+
+						<li class="fragment">Faire une pull request</a></li>
+					</ul>
+				</section>
+
+
+				<section id="setup">
+					<h3>Installation</h3>
+					<ul>
+						<li class="fragment">Forker le projet Jarvis<a href="" target="_blank"></a></li>
+						<li class="fragment">Cloner son fork sur sa machine</li>
+						<li class="fragment">lancer le script d'installation
+							<pre><code data-trim data-noescape>python installer</code></pre>
+						</li>
+					</ul>
+				</section>
+
+
+				<section id="util" data-visibility="hidden">
+					<h3>Liens utiles</h3>
+					<ul>
+						<li><a href="" target="_blank"></a></li>
+						<li><a href="" target="_blank"></a></li>
+						<li><a href="" target="_blank"></a></li>
+					</ul>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="../../reveal.js-master/dist/reveal.js"></script>
+		<script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+		<script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+		<script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: 1440,
+				height: 1080,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				transition: 'slide',
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
