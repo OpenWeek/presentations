@@ -61,10 +61,6 @@
 				</section>
 
 				<section>
-					<aside class="notes">
-						- data : endroit où sont sauvegardées les données
-						- CmdInterpreter : contient JarvisAPI, Jarvis interface for plugins.
-					</aside>
 					<h3> Structure de l'application </h3>
 					<pre><code class="language-plaintext">
 	| Jarvis
@@ -80,7 +76,7 @@
 						- CmdInterpreter : contient JarvisAPI, Jarvis interface for plugins.
 					</aside>
 					<h3> Structure de l'application </h3>
-					<pre><code class="language-plaintext" data-line-numbers="1-15|6|7-8|9-11|12-13|14|15">
+					<pre><code class="language-plaintext" data-line-numbers="1-15|6|7-8|9-11|12|13">
 	| Jarvis
 		| doc
 		| installer
@@ -91,8 +87,6 @@
 			| plugins
 				- voice.py
 				- voice_control.py
-			| packages
-				| memory
 			- __main__.py
 			- CmdInterpreter.py
 					</code></pre>
@@ -132,10 +126,11 @@
 				<section id="setup">
 					<h3>Installation</h3>
 					<ul>
-						<li class="fragment">Forker le projet Jarvis<a href="" target="_blank"></a></li>
-						<li class="fragment">Cloner son fork sur sa machine</li>
+						<li class="fragment">Cloner le fork de l'Openweek sur sa machine
+							<pre><code data-trim data-noescape class="language-plaintext" >git clone git@github.com:OpenWeek/Jarvis.git</code></pre>
+						</li>
 						<li class="fragment">lancer le script d'installation
-							<pre><code data-trim data-noescape>python installer</code></pre>
+							<pre><code data-trim data-noescape class="language-plaintext" >python installer</code></pre>
 						</li>
 					</ul>
 				</section>
