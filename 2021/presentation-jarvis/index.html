@@ -51,7 +51,8 @@
 				<section>
 					<aside class="notes">
 						- Pas de DB : sauvegardé dans des fichier
-						- Pas de GUI
+						- GUI en python -> kivy
+						- serveur en python Flask
 					</aside>
 					<h3>Technologie </h3>
 					<ul>
@@ -71,24 +72,23 @@
 				</section>
 				<section>
 					<aside class="notes">
+						/!\ branch dev
 						- data : endroit où sont sauvegardées les documents
 						- packages/ memory : endroit où sont sauvegardées les données utilisateur
-						- CmdInterpreter : contient JarvisAPI, Jarvis interface for plugins.
+						- frontend: où il y la GUI, serveur, ... WORK IN PROGRESS
 					</aside>
 					<h3> Structure de l'application </h3>
-					<pre><code class="language-plaintext" data-line-numbers="1-15|6|7-8|9-11|12|13">
+					<pre><code class="language-plaintext" data-line-numbers="1-15|6|7|8-9|10|11">
 	| Jarvis
 		| doc
 		| installer
 		| jarviscli
 			| data
+			| frontend
 			| packages
 				| memory
 			| plugins
-				- voice.py
-				- voice_control.py
 			- __main__.py
-			- CmdInterpreter.py
 					</code></pre>
 				</section>
 
